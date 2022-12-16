@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    background-image:linear-gradient(to top, rgba(15, 15, 15, 0.685)100%, rgba(0,0,0,0.8)100%),url(bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 160vh;
+}
+
+#reserve form{
+    width:fit-content;
+    margin-left: 450px;
+    margin-top: 55px;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+
+}
+#reserve form fieldset{
+    padding: 50px;
+    border-color: rgb(0, 0, 0);
+    border-width: 4px;
+    border-radius: 4%;
+}
+
+#reserve form legend{
+    text-align: center;
+    border: solid 4px rgb(255, 255, 255);
+    padding: 25px 100px ;
+    font-family: 'Poppins';
+    color: rgb(250, 107, 6);
+    font-size: 40px;
+    text-shadow: 0 0 2px black;
+}
+
+#reserve form .frm{
+    margin-left: 95px;
+    font-family: 'Poppins';
+    font-weight: lighter;
+    text-align: left;
+}
+
+#reserve form input{
+        border: solid 2px rgb(255, 255, 255);
+        padding: 10px;
+        background-color:rgba(0, 0, 0, 0.514)
+}
+
+#reserve form input[type="text"], #reserve form input[type="date"],#reserve form input[type="time"], #reserve form input[type="number"],#reserve form input[type="tel"],#reserve form input[type="email"]{
+    color: white;
+    width: 300px;
+}
+
+#reserve form input[type="submit"],#reserve form input[type="reset"]{
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    font-style:bold;
+    margin: 2px;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+
+#reserve form a{
+    color: beige;
+    width: min-content;
+}
+
+#reserve form input[type="submit"]:hover,#reserve form input[type="reset"]:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+#reserve form label{
+    color: white;
+}
+
+#logo{
+    margin: 0 640px;
+    margin-top: 20px;
+}
+
+#reserve a{
+    margin-left: 88px;
+}
+

@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    width: 100%;
+    background-image:linear-gradient(to top, rgba(21, 21, 21, 0.637)100%, rgba(0,0,0,0.8)100%),url(bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 109vh;
+}
+#logo{
+    margin-left: 665px;
+    margin-top: 40px;
+
+}
+
+#din{
+    padding: 15px 200px 15px 200px;
+    width: fit-content;
+    margin-left: 523px;
+    background-color: rgba(0, 0, 0, 0.784);
+    font-family: 'Poppins';
+    border: solid 7px black;
+    font-size: 20px;
+
+
+}
+#din a{
+    color: rgba(255, 255, 255, 0.941) ;
+    text-decoration: none;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+#din a:hover{
+    transition: 0.4s ease-in-out;
+    color: rgb(255, 102, 0); 
+}
+
+#del{
+    padding: 15px 200px 15px 200px;
+    width: fit-content;
+    margin-left: 513px;
+    background-color: rgba(0, 0, 0, 0.799);
+    font-family:'Poppins';
+    border: solid 7px black;
+    font-size: 20px;
+
+}
+#del a{
+    color: rgba(255, 255, 255, 0.941) ;
+    text-decoration: none;
+    font-family:'Poppins';
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+#del a:hover{
+    transition: 0.4s ease-in-out;
+    color: rgb(255, 102, 0); 
+}
+

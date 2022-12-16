@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="cartt.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="cart">
+          <div class="col-md-12 col-lg-10 mx-auto">
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-7 center-item">
+                  <img src="samosa.png" alt="" />
+                  <h5> Samosa
+                  </h5>
+                </div>
+
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button id="removePhone" class="btn btn-default">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      id="noOfPhone"
+                      type="text"
+                      class="form-control text-center"
+                      value="0"
+                    />
+                    <button id="addPhone" class="btn btn-default">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <h5>Rs. <span id="phonePrice">0</span></h5>
+                  <img src="dbhremove.png" alt="" class="remove-item" />
+                </div>
+              </div>
+            </div>
+
+            
+
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-7 center-item mx-auto">
+                  <img src="coffee.png" alt="" />
+                  <h5>Coffee</h5>
+                </div>
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button id="removeCase" class="btn btn-default">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      id="noOfCase"
+                      type="text"
+                      class="form-control text-center"
+                      value="0"
+                    />
+                    <button id="addCase" class="btn btn-default">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <h5>Rs. <span id="casePrice">0</span></h5>
+                  <img src="rexamove.png" alt="" class="remove-item" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+                <div class="row">
+                  <div class="col-md-7 center-item mx-auto">
+                    <img src="dosa.jpeg" alt="" />
+                    <h5>Dosa</h5>
+                  </div>
+                  <div class="col-md-5 center-item">
+                    <div class="input-group number-spinner">
+                      <button id="removeDosa" class="btn btn-default">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        id="noOfDosa"
+                        type="text"
+                        class="form-control text-center"
+                        value="0"
+                      />
+                      <button id="addDosa" class="btn btn-default">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <h5>Rs. <span id="DosaPrice">0</span></h5>
+                    <img src="rexamove.png" alt="" class="remove-item" />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="cart-item">
+                <div class="row">
+                  <div class="col-md-7 center-item mx-auto">
+                    <img src="palav.jpeg" alt="" />
+                    <h5>Palav</h5>
+                  </div>
+                  <div class="col-md-5 center-item">
+                    <div class="input-group number-spinner">
+                      <button id="removePalav" class="btn btn-default">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        id="noOfPalav"
+                        type="text"
+                        class="form-control text-center"
+                        value="0"
+                      />
+                      <button id="addPalav" class="btn btn-default">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <h5>Rs. <span id="PalavPrice">0</span></h5>
+                    <img src="rexamove.png" alt="" class="remove-item" />
+                  </div>
+                </div>
+              </div>
+  
+
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <h5>Subtotal:</h5>
+                  <h5>TaxForDev:</h5>
+                  <h5>Total:</h5>
+                </div>
+
+                <div class="col-md-4 status">
+                  <h5>Rs.<span id="subTotal">0</span></h5>
+                  <h5>Rs.1</h5>
+                  <h5>Rs.<span id="total">1</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 pt-4 pb-4">
+              <button type="button" class="btn btn-success check-out">
+                <a href="payment.html">Check out</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const singlePhonePrice = 15;
+      const singleDosaPrice = 40;
+      const singleCasePrice = 15;
+      const singlePalavPrice = 40;
+
+      let subtotalPrice = parseFloat(
+        document.getElementById("subTotal").innerText
+      );
+      let totalPrice = parseFloat(document.getElementById("total").innerText);
+
+      //add new phone event handler
+      const addPhoneButton = document.getElementById("addPhone");
+      addPhoneButton.addEventListener("click", function () {
+        let noOfPhone = parseInt(document.getElementById("noOfPhone").value);
+        noOfPhone++;
+        document.getElementById("noOfPhone").value = noOfPhone;
+
+        PriceOfPhone(singlePhonePrice);
+        nitPhonePrice(singlePhonePrice);
+      });
+
+      //add new case event handler
+      const addCaseButton = document.getElementById("addCase");
+      addCaseButton.addEventListener("click", function () {
+        let noOfCase = parseInt(document.getElementById("noOfCase").value);
+        noOfCase++;
+        document.getElementById("noOfCase").value = noOfCase;
+
+        PriceOfCase(singleCasePrice);
+        nitCasePrice(singleCasePrice);
+      });
+
+      //remove phone event handler
+      const removePhoneButton = document.getElementById("removePhone");
+      removePhoneButton.addEventListener("click", function () {
+        let noOfPhone = parseInt(document.getElementById("noOfPhone").value);
+        if (noOfPhone > 0) {
+          noOfPhone--;
+          document.getElementById("noOfPhone").value = noOfPhone;
+
+          PriceOfPhone(-1 * singlePhonePrice);
+          nitPhonePrice(-1 * singlePhonePrice);
+        }
+      });
+
+
+
+      //remove case event handler
+      const removeCaseButton = document.getElementById("removeCase");
+      removeCaseButton.addEventListener("click", function () {
+        let noOfCase = parseInt(document.getElementById("noOfCase").value);
+        if (noOfCase > 0) {
+          noOfCase--;
+          document.getElementById("noOfCase").value = noOfCase;
+
+          PriceOfCase(-1 * singleCasePrice);
+          nitCasePrice(-1 * singleCasePrice);
+        }
+      });//add new phone event handler
+      const addDosaButton = document.getElementById("addDosa");
+      addDosaButton.addEventListener("click", function () {
+        let noOfDosa = parseInt(document.getElementById("noOfDosa").value);
+        noOfDosa++;
+        document.getElementById("noOfDosa").value = noOfDosa;
+
+        PriceOfDosa(singleDosaPrice);
+        nitDosaPrice(singleDosaPrice);
+      });
+
+      const addPalavButton = document.getElementById("addPalav");
+      addPalavButton.addEventListener("click", function () {
+        let noOfPalav = parseInt(document.getElementById("noOfPalav").value);
+        noOfPalav++;
+        document.getElementById("noOfPalav").value = noOfPalav;
+
+        PriceOfPalav(singlePalavPrice);
+        nitPalavPrice(singlePalavPrice);
+      });
+
+
+      //remove phone event handler
+      const removeDosaButton = document.getElementById("removeDosa");
+      removeDosaButton.addEventListener("click", function () {
+        let noOfDosa = parseInt(document.getElementById("noOfDosa").value);
+        if (noOfDosa > 0) {
+          noOfDosa--;
+          document.getElementById("noOfDosa").value = noOfDosa;
+
+          PriceOfDosa(-1 * singleDosaPrice);
+          nitDosaPrice(-1 * singleDosaPrice);
+        }
+      });
+      const removePalavButton = document.getElementById("removePalav");
+      removePalavButton.addEventListener("click", function () {
+        let noOfPalav = parseInt(document.getElementById("noOfPalav").value);
+        if (noOfPalav > 0) {
+          noOfPalav--;
+          document.getElementById("noOfPalav").value = noOfPalav;
+
+          PriceOfPalav(-1 * singlePalavPrice);
+          nitPalavPrice(-1 * singlePalavPrice);
+        }
+      });
+
+
+      //price of phone
+      function PriceOfPhone(singlePhone) {
+        let phonePrice = parseFloat(
+          document.getElementById("phonePrice").innerText
+        );
+        phonePrice = phonePrice + singlePhone;
+        document.getElementById("phonePrice").innerText = phonePrice;
+        return phonePrice;
+      }
+
+      //price of case
+      function PriceOfCase(singleCase) {
+        let casePrice = parseFloat(
+          document.getElementById("casePrice").innerText
+        );
+        casePrice = casePrice + singleCase;
+        document.getElementById("casePrice").innerText = casePrice;
+        return casePrice;
+      }
+      //price of phone
+      function PriceOfDosa(singleDosa) {
+        let DosaPrice = parseFloat(
+          document.getElementById("DosaPrice").innerText
+        );
+        DosaPrice = DosaPrice + singleDosa;
+        document.getElementById("DosaPrice").innerText = DosaPrice;
+        return DosaPrice;
+      }
+      function PriceOfPalav(singlePalav) {
+        let PalavPrice = parseFloat(
+          document.getElementById("PalavPrice").innerText
+        );
+        PalavPrice = PalavPrice + singlePalav;
+        document.getElementById("PalavPrice").innerText = PalavPrice;
+        return PalavPrice;
+      }
+
+
+      //total and subtotal Phone price
+      function nitPhonePrice(singlePhonePrice) {
+        subtotalPrice = subtotalPrice + singlePhonePrice;
+        document.getElementById("subTotal").innerText = subtotalPrice;
+
+        totalPrice = totalPrice + singlePhonePrice;
+        document.getElementById("total").innerText = totalPrice;
+      }
+
+      //total and subtotal Case price
+      function nitCasePrice(singleCasePrice) {
+        subtotalPrice = subtotalPrice + singleCasePrice;
+        document.getElementById("subTotal").innerText = subtotalPrice;
+
+        totalPrice = totalPrice + singleCasePrice;
+        document.getElementById("total").innerText = totalPrice;
+      }
+      //total and subtotal Phone price
+      function nitDosaPrice(singleDosaPrice) {
+        subtotalPrice = subtotalPrice + singleDosaPrice;
+        document.getElementById("subTotal").innerText = subtotalPrice;
+
+        totalPrice = totalPrice + singleDosaPrice;
+        document.getElementById("total").innerText = totalPrice;
+      }
+      //total and subtotal Case price
+      function nitPalavPrice(singlePalavPrice) {
+        subtotalPrice = subtotalPrice + singlePalavPrice;
+        document.getElementById("subTotal").innerText = subtotalPrice;
+
+        totalPrice = totalPrice + singlePalavPrice;
+        document.getElementById("total").innerText = totalPrice;
+      }
+
+      let currentPhone = parseInt(noOfPhone.value);
+      if (currentPhone < 0) {
+        noOfPhone.value = 0;
+      }
+    
+
+    </script>
+  </body>
+</html>

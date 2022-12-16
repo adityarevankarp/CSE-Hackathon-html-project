@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    width: 100%;
+    background-image:linear-gradient(to top, rgba(21, 21, 21, 0.832)100%, rgba(0, 0, 0, 0.901)100%),url(dayanda.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 109vh;
+}
+#logo{
+    margin-left: 525px;
+    margin-top: 30px;
+
+
+}
+
+#del{
+    padding: 15px 200px 15px 200px;
+    width: fit-content;
+    margin-left: 280px;
+    margin-top:50px;
+    background-color: rgba(0, 0, 0, 0.712);
+    font-family:'Poppins';
+    border: solid 7px black;
+    font-size: 20px;
+
+}
+#del a{
+    color: rgba(255, 255, 255, 0.941) ;
+    text-decoration: none;
+    font-family:'Poppins';
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+#del a:hover{
+    transition: 0.4s ease-in-out;
+    color: rgb(251, 255, 0); 
+}
+h1{
+    color: rgb(244, 244, 244);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    margin-left: 430px;
+    margin-top: 40px;
+}
